@@ -9,11 +9,11 @@
 							<?php echo $erros_validacao['nome']; ?>
 						</span>
 					<?php endif; ?>
-					<input type="text" name="nome" value="<?php echo $tarefa->getNome(); ?>">
+					<input type="text" name="nome" value="<?php echo htmlentities($tarefa->getNome()); ?>">
 				</label>
 				<label>
 					Descrição:
-					<textarea name="descricao"><?php echo $tarefa->getDescricao(); ?></textarea>
+					<textarea name="descricao"><?php echo htmlentities($tarefa->getDescricao()); ?></textarea>
 				</label>
 				<label>
 					Prazo (Opcional):

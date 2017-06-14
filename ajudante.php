@@ -147,7 +147,7 @@
 		$corpo = ob_get_contents();
 		ob_end_clean();
 		return $corpo;
-		var_dump($corpo);
+
 	}
 
 	function gravar_log($mensagem)

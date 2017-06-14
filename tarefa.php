@@ -7,7 +7,7 @@
 	require "classes/Anexo.php";
 	require "classes/RepositorioTarefas.php";
 
-	$repositorio_tarefas = new RepositorioTarefas($conexao);
+	$repositorio_tarefas = new RepositorioTarefas($pdo);
 
 	$tem_erros = false;
 	$erros_validacao = array();

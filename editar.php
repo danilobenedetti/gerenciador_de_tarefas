@@ -9,7 +9,7 @@
 	require "classes/Anexo.php";
 	require "classes/RepositorioTarefas.php";
 
-	$repositorio_tarefas = new RepositorioTarefas($conexao);
+	$repositorio_tarefas = new RepositorioTarefas($pdo);
 	$tarefa = $repositorio_tarefas->buscar($_GET['id']);
 
 	$exibir_tabela = false;

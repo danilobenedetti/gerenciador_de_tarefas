@@ -1,9 +1,16 @@
 <?php
+
+	try{
+		$pdo = new PDO(BD_DSN, BD_USUARIO, BD_SENHA);
+	} catch (PDOException $e){
+		echo "Falha na conexão com o banco de dados: " . $e->getMessage();
+		die();
+	}
 	
-//	$bdServidor = '127.0.0.1';
-//	$bdUsuario = 'sistematarefas';
-//	$bdSenha = 'sistema';
-//	$bdBanco = 'tarefas';
+/*	$bdServidor = '127.0.0.1';
+	$bdUsuario = 'sistematarefas';
+	$bdSenha = 'sistema';
+	$bdBanco = 'tarefas';
 
 	$conexao = mysqli_connect(BD_SERVIDOR, BD_USUARIO, BD_SENHA, BD_BANCO);
 
@@ -117,4 +124,4 @@
 		$sqlRemover = "DELETE FROM anexos WHERE id = {$id}";
 
 		mysqli_query($conexao, $sqlRemover);
-	}
+	} */
