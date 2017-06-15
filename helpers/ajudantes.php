@@ -112,7 +112,7 @@
 	function enviar_email(Tarefa $tarefa)
 	{
 
-		require __DIR__ . "libs/PHPMailer/PHPMailerAutoload.php";
+		require __DIR__ . "/../libs/PHPMailer/PHPMailerAutoload.php";
 		
 		$corpo = preparar_corpo_email($tarefa);
 
