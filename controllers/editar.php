@@ -1,15 +1,5 @@
 <?php
 
-//	session_start();
-
-	require "config.php";
-	require "banco.php";
-	require "ajudante.php";
-	require "classes/Tarefa.php";
-	require "classes/Anexo.php";
-	require "classes/RepositorioTarefas.php";
-
-	$repositorio_tarefas = new RepositorioTarefas($pdo);
 	$tarefa = $repositorio_tarefas->buscar($_GET['id']);
 
 	$exibir_tabela = false;
@@ -62,18 +52,10 @@
 				enviar_email($tarefa);
 			}
 			
-			header('Location: tarefas.php');
+			header('Location: index.php?rota=tarefas');
 			die();
 		}
 
 	}
 
-	//$tarefa = buscar_tarefa($conexao, $_GET['id']);
-
-	//$tarefa['nome'] = (array_key_exists('nome', $_POST)) ? $_POST['nome'] : $tarefa['nome'];
-	//$tarefa['descricao'] = (array_key_exists('descricao', $_POST)) ? $_POST['descricao'] : $tarefa['descricao'];
-	//$tarefa['prazo'] = (array_key_exists('prazo', $_POST)) ? $_POST['prazo'] : $tarefa['prazo'];
-	//$tarefa['prioridade'] = (array_key_exists('prioridade', $_POST)) ? $_POST['prioridade'] : $tarefa['prioridade'];
-	//$tarefa['concluida'] = (array_key_exists('concluida', $_POST)) ? $_POST['concluida'] : $tarefa['concluida'];
-
-	include "template.php";
+	require __DIR__ . "/../views/template.php";

@@ -1,16 +1,5 @@
 <?php
 
-	//session_start();
-
-	require "config.php";
-	require "banco.php";
-	require "ajudante.php";
-	require "classes/Tarefa.php";
-	require "classes/Anexo.php";
-	require "classes/RepositorioTarefas.php";
-
-	$repositorio_tarefas = new RepositorioTarefas($pdo);
-
 	$exibir_tabela = true;
 
 	$tem_erros = false;
@@ -65,7 +54,7 @@
 				enviar_email($tarefa);
 			}
 			
-			header('Location: tarefas.php');
+			header('Location: index.php?rota=tarefas');
 			die();
 		}
 
@@ -73,4 +62,4 @@
 
 	$tarefas = $repositorio_tarefas->buscar();
 
-	require "template.php";
+	require __DIR__ . "/../views/template.php";

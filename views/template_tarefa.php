@@ -2,13 +2,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Gerenciados de Tarefas</title>
-		<link rel="stylesheet" type="text/css" href="tarefas.css">
+		<link rel="stylesheet" type="text/css" href="assets/tarefas.css">
 	</head>
 	<body>
 		<div="bloco_principal">
 			<h1>Tarefa: <?php echo htmlentities($tarefa->getNome()); ?></h1>
 			<p>
-				<a href="tarefas.php">
+				<a href="index.php?rota=tarefas">
 					Voltar para a lista de tarefas
 				</a>
 			</p>
@@ -45,7 +45,7 @@
 								<a href="anexos/<?php echo $anexo->getArquivo(); ?>">
 									Download
 								</a>
-								<a href="remover_anexo.php?id=<?php echo $anexo->getId(); ?>">
+								<a href="index.php?rota=remover_anexo&id=<?php echo $anexo->getId(); ?>">
 									Remover
 								</a>
 							</td>
